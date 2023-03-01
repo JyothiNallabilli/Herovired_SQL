@@ -1,0 +1,93 @@
+SQL> create database FootBall;
+
+SQL> create table Football_Venue(Venue_id varchar2(20),Venue_name varchar2(20),City_id varchar2(20),Capacity number);
+
+Table created.
+
+SQL> insert into Football_Venue values('A121','Australia','1001',123556);
+
+1 row created.
+
+SQL> insert into Football_Venue values('A122','Argentina','1002',245789);
+
+1 row created.
+
+SQL> insert into Football_Venue values('A123','Europe','1003',874567);
+
+1 row created.
+
+SQL> insert into Football_Venue values('A124','Russia','1004',100099);
+
+1 row created.
+
+SQL> insert into Football_Venue values('A125','India','1005',198949);
+
+1 row created.
+
+SQL> insert into Football_Venue values('A126','Dubai','1006',248949);
+
+1 row created.
+
+SQL> insert into Football_Venue values('A127','Malaysia','1007',465949);
+
+1 row created.
+
+SQL> insert into Football_Venue values('A128','Malaysia','1008',787878);
+
+1 row created.
+
+SQL> insert into Football_Venue values('A129','France','1009',787878);
+
+1 row created.
+
+SQL> insert into Football_Venue values('A130','Japan','1010',989778);
+
+1 row created.
+
+SQL> select count(Venue_id) from Football_Venue;
+
+COUNT(VENUE_ID)
+---------------
+             10
+
+SQL> column Venue_name heading Location;
+SQL> column Capacity heading Volume;
+
+SQL> select Venue_name, Capacity from Football_Venue;
+
+Location                 Volume
+-------------------- ----------
+Australia                123556
+Argentina                245789
+Europe                   874567
+Russia                   100099
+India                    198949
+Dubai                    248949
+Malaysia                 465949
+Malaysia                 787878
+France                   787878
+Japan                    989778
+
+10 rows selected.
+
+SQL> delete from Football_venue where Venue_name='Australia';
+
+1 row deleted.
+
+SQL> select * from Football_Venue;
+
+VENUE_ID             Location             CITY_ID                  Volume
+-------------------- -------------------- -------------------- ----------
+A122                 Argentina            1002                     245789
+A123                 Europe               1003                     874567
+A124                 Russia               1004                     100099
+A125                 India                1005                     198949
+A126                 Dubai                1006                     248949
+A127                 Malaysia             1007                     465949
+A128                 Malaysia             1008                     787878
+A129                 France               1009                     787878
+A130                 Japan                1010                     989778
+
+9 rows selected.
+
+SQL>
