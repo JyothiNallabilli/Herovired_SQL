@@ -1,0 +1,202 @@
+SQL> connect
+Enter user-name: system
+Enter password:
+Connected.
+SQL> create database Employee;
+
+SQL> create table Employee_detail(Emp_id varchar2(20),Emp_name varchar2(20),Job_name varchar2(20),Manager_id varchar2(20),Hire_date varchar2(20),Salary number,Dep_id varchar2(20));
+
+Table created.
+
+SQL> insert into Employee_detail values('1231','N.Jyothi';'Operational Engineer','1001','12/02/2020',50000,'A121');
+insert into Employee_detail values('1231','N.Jyothi';'Operational Engineer','1001','12/02/2020',50000,'A121')
+                                                    *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+SQL> insert into Employee_detail values('1231','N.Jyothi','Operational Engineer','1001','12/02/2020',50000,'A121');
+
+1 row created.
+
+SQL> insert into Employee_detail values('1232','M.Saketh','Software Developer','1002','05/12/2021',55000,'A122');
+
+1 row created.
+
+SQL> insert into Employee_detail values('1233','K.Karthikeya','HR','1003','08/10/2018',40000,'A123');
+
+1 row created.
+
+SQL> insert into Employee_detail values('1234','P.Hema','Manager','1004','10/07/2019',60000,'A124');
+
+1 row created.
+
+SQL> insert into Employee_detail values('1235','S.Prasanna','Testing Engineer','1005','25/09/2020',55000,'A125');
+
+1 row created.
+
+SQL> insert into Employee_detail values('1236','P.Swathi','Operational Engineer','1001','12/07/2017',70000,'A121');
+
+1 row created.
+
+SQL> insert into Employee_detail values('1237','T.Vijay','Software Developer','1002','05/09/2021',90000,'A122');
+
+1 row created.
+
+SQL> insert into Employee_detail values('1238','Ch.Deepthi','HR','1003','18/01/2017',50000,'A123');
+
+1 row created.
+
+SQL> insert into Employee_detail values('1239','J.Harika','Manager','1004','14/04/2020',55000,'A124');
+
+1 row created.
+
+SQL> insert into Employee_detail values('1240','Y.Praveen','FullStack Developer','1006','23/08/2018',70000,'A126');
+
+1 row created.
+
+SQL> select * from Employee_detail;
+
+EMP_ID               EMP_NAME             JOB_NAME
+-------------------- -------------------- --------------------
+MANAGER_ID           HIRE_DATE                SALARY DEP_ID
+-------------------- -------------------- ---------- --------------------
+1231                 N.Jyothi             Operational Engineer
+1001                 12/02/2020                50000 A121
+
+1232                 M.Saketh             Software Developer
+1002                 05/12/2021                55000 A122
+
+1233                 K.Karthikeya         HR
+1003                 08/10/2018                40000 A123
+
+
+EMP_ID               EMP_NAME             JOB_NAME
+-------------------- -------------------- --------------------
+MANAGER_ID           HIRE_DATE                SALARY DEP_ID
+-------------------- -------------------- ---------- --------------------
+1234                 P.Hema               Manager
+1004                 10/07/2019                60000 A124
+
+1235                 S.Prasanna           Testing Engineer
+1005                 25/09/2020                55000 A125
+
+1236                 P.Swathi             Operational Engineer
+1001                 12/07/2017                70000 A121
+
+
+EMP_ID               EMP_NAME             JOB_NAME
+-------------------- -------------------- --------------------
+MANAGER_ID           HIRE_DATE                SALARY DEP_ID
+-------------------- -------------------- ---------- --------------------
+1237                 T.Vijay              Software Developer
+1002                 05/09/2021                90000 A122
+
+1238                 Ch.Deepthi           HR
+1003                 18/01/2017                50000 A123
+
+1239                 J.Harika             Manager
+1004                 14/04/2020                55000 A124
+
+
+EMP_ID               EMP_NAME             JOB_NAME
+-------------------- -------------------- --------------------
+MANAGER_ID           HIRE_DATE                SALARY DEP_ID
+-------------------- -------------------- ---------- --------------------
+1240                 Y.Praveen            FullStack Developer
+1006                 23/08/2018                70000 A126
+
+
+10 rows selected.
+
+SQL> select Salary from Employee_detail;
+
+    SALARY
+----------
+     50000
+     55000
+     40000
+     60000
+     55000
+     70000
+     90000
+     50000
+     55000
+     70000
+
+10 rows selected.
+
+SQL> update Employee_detail set Emp_name='K.Raj' where Emp_id=1240;
+
+1 row updated.
+
+SQL> select distinct Job_name from Employee_detail;
+
+JOB_NAME
+--------------------
+Operational Engineer
+Manager
+Software Developer
+FullStack Developer
+HR
+Testing Engineer
+
+6 rows selected.
+
+SQL> update Employee_detail set Salary=85000 where Emp_name='K.Raj';
+
+1 row updated.
+
+SQL> select * from Employee_detail;
+
+EMP_ID               EMP_NAME             JOB_NAME
+-------------------- -------------------- --------------------
+MANAGER_ID           HIRE_DATE                SALARY DEP_ID
+-------------------- -------------------- ---------- --------------------
+1231                 N.Jyothi             Operational Engineer
+1001                 12/02/2020                50000 A121
+
+1232                 M.Saketh             Software Developer
+1002                 05/12/2021                55000 A122
+
+1233                 K.Karthikeya         HR
+1003                 08/10/2018                40000 A123
+
+
+EMP_ID               EMP_NAME             JOB_NAME
+-------------------- -------------------- --------------------
+MANAGER_ID           HIRE_DATE                SALARY DEP_ID
+-------------------- -------------------- ---------- --------------------
+1234                 P.Hema               Manager
+1004                 10/07/2019                60000 A124
+
+1235                 S.Prasanna           Testing Engineer
+1005                 25/09/2020                55000 A125
+
+1236                 P.Swathi             Operational Engineer
+1001                 12/07/2017                70000 A121
+
+
+EMP_ID               EMP_NAME             JOB_NAME
+-------------------- -------------------- --------------------
+MANAGER_ID           HIRE_DATE                SALARY DEP_ID
+-------------------- -------------------- ---------- --------------------
+1237                 T.Vijay              Software Developer
+1002                 05/09/2021                90000 A122
+
+1238                 Ch.Deepthi           HR
+1003                 18/01/2017                50000 A123
+
+1239                 J.Harika             Manager
+1004                 14/04/2020                55000 A124
+
+
+EMP_ID               EMP_NAME             JOB_NAME
+-------------------- -------------------- --------------------
+MANAGER_ID           HIRE_DATE                SALARY DEP_ID
+-------------------- -------------------- ---------- --------------------
+1240                 K.Raj                FullStack Developer
+1006                 23/08/2018                85000 A126
+
+
+10 rows selected.
